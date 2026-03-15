@@ -18,16 +18,6 @@ import { ArrowRight } from "@lucide/astro";
                 class="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40"
             >
                 <div class="flex flex-col items-center text-center">
-                    {/* Badge */}
-                    <div
-                        class="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5"
-                    >
-                        <span class="size-2 rounded-full bg-accent"></span>
-                        <span class="text-sm text-muted-foreground"
-                            >Introducing the Veblex Ecosystem</span
-                        >
-                    </div>
-
                     {/* Main heading */}
                     <h1
                         class="max-w-4xl text-balance text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
@@ -44,13 +34,13 @@ import { ArrowRight } from "@lucide/astro";
                     >
                         Veblex is your unified digital ecosystem. Track your
                         fitness, organize your schedule, manage your
-                        entertainment, and more — all connected through a single
-                        secure account.
+                        entertainment, and more - all connected through a single
+                        secure Veblex account.
                     </p>
 
                     {/* CTA Buttons */}
                     <div
-                        class="mt-10 flex flex-col items-center gap-4 sm:flex-row"
+                        class="mt-10 grid grid-cols-1 items-center gap-4 sm:grid-cols-2"
                     >
                         <button
                             class="cursor-pointer flex items-center gap-2 bg-foreground text-background rounded-md py-2 px-6"
@@ -66,7 +56,7 @@ import { ArrowRight } from "@lucide/astro";
 
                     {/* Stats */}
                     <div
-                        class="mt-16 grid grid-cols-2 gap-8 border-t border-border pt-10 sm:grid-cols-4 sm:gap-12"
+                        class="mt-10 flex flex-col flex-wrap gap-8 pt-10 sm:gap-12 justify-center sm:flex-row"
                     >
                         <div class="flex flex-col items-center">
                             <span
@@ -93,15 +83,6 @@ import { ArrowRight } from "@lucide/astro";
                             >
                             <span class="mt-1 text-sm text-muted-foreground"
                                 >Secure SSO</span
-                            >
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <span
-                                class="text-3xl font-bold text-foreground sm:text-4xl"
-                                >24/7</span
-                            >
-                            <span class="mt-1 text-sm text-muted-foreground"
-                                >Always Available</span
                             >
                         </div>
                     </div>
