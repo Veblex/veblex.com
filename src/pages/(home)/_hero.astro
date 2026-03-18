@@ -36,33 +36,35 @@ const floatingIcons = [
 ---
 
 <section class="relative min-h-[80vh] overflow-hidden">
-    {/* Decorative background shapes */}
-    <div class="absolute inset-0 -z-10" aria-hidden="true">
-        <div
-            class="absolute left-1/4 top-1/4 size-96 rounded-full bg-primary/5 blur-3xl"
-        >
-        </div>
-        <div
-            class="absolute bottom-1/4 right-1/4 size-96 rounded-full bg-accent/5 blur-3xl"
-        >
-        </div>
-    </div>
-
-    {/* Floating app icons */}
-    {
-        floatingIcons.map((item) => (
+    <div class="max-w-450 mx-auto absolute inset-0">
+        {/* Decorative background shapes */}
+        <div class="absolute inset-0 -z-10" aria-hidden="true">
             <div
-                class={`absolute hidden lg:flex ${item.position} size-16 items-center justify-center rounded-2xl ${item.color} text-primary-foreground shadow-xl animate-bounce`}
-                style={{
-                    animationDelay: item.delay,
-                    animationDuration: "3s",
-                }}
-                aria-hidden="true"
+                class="absolute left-1/4 top-1/4 size-96 rounded-full bg-primary/5 blur-3xl"
             >
-                <item.icon class="size-7" />
             </div>
-        ))
-    }
+            <div
+                class="absolute bottom-1/4 right-1/4 size-96 rounded-full bg-accent/5 blur-3xl"
+            >
+            </div>
+        </div>
+
+        {/* Floating app icons */}
+        {
+            floatingIcons.map((item) => (
+                <div
+                    class={`absolute hidden lg:flex ${item.position} size-16 items-center justify-center rounded-2xl ${item.color} text-primary-foreground shadow-xl animate-bounce`}
+                    style={{
+                        animationDelay: item.delay,
+                        animationDuration: "3s",
+                    }}
+                    aria-hidden="true"
+                >
+                    <item.icon class="size-7" />
+                </div>
+            ))
+        }
+    </div>
 
     <div
         class="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40 relative"
