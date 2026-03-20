@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/root.astro";
+
+const matches = import.meta.glob('./posts/*.mdx', { eager: true });
+const posts = Object.values(matches);
+---
+
+<Layout>
+    <main class="flex-1">
+        <h1>Blog</h1>
+
+        {posts.map(post => <p>{post.title}</p>)}
+    </main>
+</Layout>
