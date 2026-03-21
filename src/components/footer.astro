@@ -3,29 +3,29 @@ const year = new Date().getFullYear();
 
 const footerLinks = {
     services: [
-        { name: "Veblex Gym", href: "https://gym.veblex.com/"},
-        { name: "Veblex Auth", href: "https://auth.veblex.com/"},
-        { name: "Veblex Calendar", href: "https://calendar.veblex.com/"},
-        { name: "Moviestix", href: "https://moviestix.com/"},
+        { name: "Veblex Gym", href: "https://gym.veblex.com/" },
+        { name: "Veblex Auth", href: "https://auth.veblex.com/" },
+        { name: "Veblex Calendar", href: "https://calendar.veblex.com/" },
+        { name: "Moviestix", href: "https://moviestix.com/" },
     ],
     company: [
-        { name: "About", href: "#" },
-        { name: "Careers", href: "#" },
-        { name: "Press", href: "#" },
+        { name: "About", href: "/about" },
+        { name: "Press", href: "/press" },
         { name: "Blog", href: "/blog" },
     ],
     resources: [
-        { name: "Documentation", href: "#" },
-        { name: "Help Center", href: "#" },
-        { name: "API Reference", href: "#" },
-        { name: "Status", href: "#" },
+        { name: "Documentation", href: "/docs" },
+        { name: "Help Center", href: "/help" },
+        { name: "Status", href: "/status" },
     ],
     legal: [
-        { name: "Privacy Policy", href: "#" },
-        { name: "Terms of Service", href: "#" },
-        { name: "Cookie Policy", href: "#" },
+        { name: "Privacy Policy", href: "/legal/privacy" },
+        { name: "Terms of Service", href: "/legal/terms" },
+        { name: "Cookie Policy", href: "/legal/cookies" },
     ],
 };
+
+const contactMail = "contact@veblex.com";
 ---
 
 <footer class="border-t border-border bg-background">
@@ -35,32 +35,47 @@ const footerLinks = {
             <!-- Brand -->
             <div>
                 <a href="/" class="flex max-w-28">
-                    <img src="/veblex-logo_full-light.svg" alt="Veblex">
+                    <img src="/veblex-logo_full-light.svg" alt="Veblex" />
                 </a>
 
-                <p class="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-                    Your unified digital ecosystem. One account, endless possibilities.
+                <p
+                    class="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground"
+                >
+                    Your unified digital ecosystem. One account, endless
+                    possibilities.
                 </p>
 
                 <p class="mt-6 text-sm text-muted-foreground">
-                    <a href="mailto:contact@veblex.com" class="transition-colors hover:text-foreground">
-                        contact@veblex.com
+                    <a
+                        href={`mailto:${contactMail}`}
+                        class="transition-colors hover:text-foreground"
+                    >
+                        {contactMail}
                     </a>
                 </p>
             </div>
 
-            <div class="gap-12 sm:gap-16 lg:gap-20 flex flex-wrap xl:grid xl:grid-cols-4">
+            <div
+                class="gap-12 sm:gap-16 lg:gap-20 flex flex-wrap xl:grid xl:grid-cols-4"
+            >
                 <!-- Services -->
                 <div class="flex flex-col basis-32">
                     <h3 class="text-sm font-semibold">Services</h3>
                     <ul class="mt-4 space-y-3">
-                        {footerLinks.services.map((link) => (
-                            <li>
-                                <a href={link.href} class="text-sm text-muted-foreground transition-colors hover:text-foreground" target="_blank" rel="noopener noreferrer">
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))}
+                        {
+                            footerLinks.services.map((link) => (
+                                <li>
+                                    <a
+                                        href={link.href}
+                                        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
 
@@ -68,13 +83,19 @@ const footerLinks = {
                 <div class="flex flex-col basis-32">
                     <h3 class="text-sm font-semibold">Company</h3>
                     <ul class="mt-4 space-y-3">
-                        {footerLinks.company.map((link) => (
-                            <li>
-                                <a href={link.href} class="text-sm text-muted-foreground transition-colors hover:text-foreground" rel="noopener noreferrer">
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))}
+                        {
+                            footerLinks.company.map((link) => (
+                                <li>
+                                    <a
+                                        href={link.href}
+                                        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
 
@@ -82,13 +103,19 @@ const footerLinks = {
                 <div class="flex flex-col basis-32">
                     <h3 class="text-sm font-semibold">Resources</h3>
                     <ul class="mt-4 space-y-3">
-                        {footerLinks.resources.map((link) => (
-                            <li>
-                                <a href={link.href} class="text-sm text-muted-foreground transition-colors hover:text-foreground" rel="noopener noreferrer">
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))}
+                        {
+                            footerLinks.resources.map((link) => (
+                                <li>
+                                    <a
+                                        href={link.href}
+                                        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
 
@@ -96,13 +123,19 @@ const footerLinks = {
                 <div class="flex flex-col basis-32">
                     <h3 class="text-sm font-semibold">Legal</h3>
                     <ul class="mt-4 space-y-3">
-                        {footerLinks.legal.map((link) => (
-                            <li>
-                                <a href={link.href} class="text-sm text-muted-foreground transition-colors hover:text-foreground" rel="noopener noreferrer">
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))}
+                        {
+                            footerLinks.legal.map((link) => (
+                                <li>
+                                    <a
+                                        href={link.href}
+                                        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
             </div>

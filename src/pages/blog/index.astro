@@ -1,14 +1,8 @@
 ---
-import Layout from "../../layouts/root.astro";
-
-const matches = import.meta.glob('./posts/*.mdx', { eager: true });
-const posts = Object.values(matches);
+import BlogLayout from "@layouts/blogLayout.astro";
 ---
 
-<Layout>
-    <main class="flex-1">
-        <h1>Blog</h1>
-
-        {posts.map(post => <p>{post.title}</p>)}
-    </main>
-</Layout>
+<BlogLayout>
+    <h1 class="text-4xl font-semibold mb-5">Blogs</h1>
+    <p class="text-lg">There are no blog posts yet...</p>
+</BlogLayout>

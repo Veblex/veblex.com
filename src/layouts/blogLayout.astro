@@ -1,13 +1,9 @@
 ---
-import "../styles/blog.css";
-import Layout from "./root.astro";
-
-const { frontmatter } = Astro.props;
+import Layout from "@layouts/root.astro";
 ---
 
 <Layout>
-    <main class="flex-1 mx-auto w-full max-w-3xl py-16 px-4 sm:px-6 lg:px-8">
-        <span>{frontmatter.date ?? "Unkown date"}</span>
+    <main class="flex-1 mx-auto w-full max-w-7xl py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <slot />
     </main>
 </Layout>
