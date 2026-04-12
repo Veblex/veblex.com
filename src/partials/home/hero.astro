@@ -4,6 +4,7 @@ import {
     Calendar,
     Shield,
     Clapperboard,
+    ArrowRight,
     ChevronRight,
 } from "@lucide/astro";
 
@@ -38,12 +39,12 @@ const floatingIcons = [
 ---
 
 <section
-    class="relative min-h-screen overflow-hidden flex flex-col items-center justify-center"
+    class="relative min-h-screen flex flex-col items-center justify-center"
 >
     <div
-        class="container grid grid-cols-1 xl:grid-cols-2 px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40 relative"
+        class="container grid grid-cols-1 xl:grid-cols-2 px-4 py-12 sm:py-18 sm:px-6 lg:px-8 relative"
     >
-        <div class="flex flex-col relative">
+        <div class="flex flex-col">
             {/* Main heading */}
             <h1
                 class="text-balance text-5xl md:text-6xl font-bold leading-tight tracking-tight text-foreground"
@@ -65,50 +66,54 @@ const floatingIcons = [
             {/* CTA Buttons */}
             <div class="grid sm:flex items-center gap-4">
                 <a
-                    class="cursor-pointer flex items-center justify-between gap-2 rounded-lg py-3 px-6 sm:px-12 font-medium text-lg hover:bg-primary/90 bg-primary text-primary-foreground" href="#"
+                    class="cursor-pointer flex items-center justify-between gap-2 rounded-lg py-3 px-6 sm:px-12 font-medium text-lg hover:bg-primary/90 bg-primary text-primary-foreground"
+                    href="#"
                 >
-                    Join the party
-                    <ChevronRight class="size-5" />
+                    Create Your Account
+                    <ArrowRight class="size-5" />
                 </a>
                 <a
-                    class="cursor-pointer flex items-center justify-between gap-2 rounded-lg py-3 px-6 sm:px-12 font-medium text-lg hover:bg-primary/90 border" href="#services"
+                    class="cursor-pointer flex items-center justify-between gap-2 rounded-lg py-3 px-6 sm:px-12 font-medium text-lg hover:bg-primary/90 border"
+                    href="#services"
                 >
-                    Explore our services
+                    Explore services
                     <ChevronRight class="size-5" />
                 </a>
             </div>
 
             <div class="mx-auto absolute inset-0 hidden">
-                {/* Decorative background shapes */}
-                <div class="absolute inset-0 -z-10" aria-hidden="true">
-                    <div
-                        class="absolute left-1/4 top-1/4 size-96 rounded-full bg-primary/5 blur-3xl"
-                    >
-                    </div>
-                    <div
-                        class="absolute bottom-1/4 right-1/4 size-96 rounded-full bg-accent/5 blur-3xl"
-                    >
-                    </div>
-                </div>
-
                 {/* Floating app icons */}
                 {
-                    floatingIcons.map((item) => (
-                        <div
-                            class={`absolute hidden lg:flex ${item.position} size-16 items-center justify-center rounded-2xl ${item.color} text-primary-foreground shadow-xl animate-bounce`}
-                            style={{
-                                animationDelay: item.delay,
-                                animationDuration: "3s",
-                            }}
-                            aria-hidden="true"
-                        >
-                            <item.icon class="size-7" />
-                        </div>
-                    ))
+                    false &&
+                        floatingIcons.map((item) => (
+                            <div
+                                class={`absolute hidden lg:flex ${item.position} size-16 items-center justify-center rounded-2xl ${item.color} text-primary-foreground shadow-xl animate-bounce`}
+                                style={{
+                                    animationDelay: item.delay,
+                                    animationDuration: "3s",
+                                }}
+                                aria-hidden="true"
+                            >
+                                <item.icon class="size-7" />
+                            </div>
+                        ))
                 }
             </div>
         </div>
-        <div class="flex flex-col"></div>
+
+        <div class="flex flex-col items-center justify-center"></div>
+
+        {/* Decorative background shapes */}
+        <div class="hidden xl:block absolute inset-0 -z-10" aria-hidden="true">
+            <div
+                class="absolute top-1/2 -left-1/24 size-80 rounded-full bg-primary/15 blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute bottom-1/2 right-1 size-96 rounded-full bg-accent/50 blur-3xl"
+            >
+            </div>
+        </div>
     </div>
 
     {

@@ -1,0 +1,72 @@
+---
+import { ArrowRight } from "@lucide/astro";
+
+export const partial = true;
+
+const stats = [
+    {
+        value: "3+",
+        title: "Services",
+    },
+    {
+        value: "SSO",
+        title: "Built-in Auth",
+    },
+    {
+        value: "99.9%",
+        title: "Uptime",
+    },
+    {
+        value: "∞",
+        title: "Scalability",
+    },
+];
+---
+
+<section id="mission" class="border-t border-input">
+    <div class="mx-auto container px-4 py-24 sm:py-32 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-2 lg:gap-16">
+            {/* Left column - Mission statement */}
+            <div>
+                <span class="text-muted-foreground font-mono uppercase"
+                    >About Veblex</span
+                >
+
+                <h2 class="my-4 text-4xl font-bold tracking-tight sm:text-4xl">
+                    An ecosystem, not just a product
+                </h2>
+
+                <p class="text-lg leading-relaxed text-muted-foreground">
+                    Veblex brings together a growing suite of services under a
+                    single identity. Every product shares the same design
+                    language, auth layer, and developer experience — so you can
+                    build faster with fewer tools.
+                </p>
+
+                <a
+                    class="w-fit mt-6 cursor-pointer flex items-center justify-between gap-2 rounded-lg py-2 px-6 sm:px-8 hover:bg-primary/90 bg-primary text-primary-foreground"
+                    href="#"
+                >
+                    Create Your Account
+                    <ArrowRight class="size-5" />
+                </a>
+            </div>
+
+            {/* Right column - Stats */}
+            <div
+                class="grid gap-6 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2"
+            >
+                {
+                    stats.map((stat) => (
+                        <div class="rounded-lg border border-primary/30 bg-card p-8 transition-colors duration-300 hover:border-primary/50">
+                            <p class="flex flex-col gap-2 text-sm leading-relaxed text-muted-foreground text-center">
+                                <span class="text-3xl font-bold text-foreground">{stat.value}</span><br/>
+                                {stat.title}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>
