@@ -1,80 +1,21 @@
 ---
 import Layout from "@layouts/root.astro";
-import { Puzzle, Lock, Globe, Zap, Layers } from "@lucide/astro";
 
-const values = [
-    {
-        icon: Puzzle,
-        title: "Modular by Design",
-        description:
-            "Every Veblex service is self-contained yet interconnected. Use one or use them all — they integrate seamlessly.",
-    },
-    {
-        icon: Lock,
-        title: "Security First",
-        description:
-            "Veblex Auth provides a unified SSO layer so users authenticate once and access every service securely.",
-    },
-    {
-        icon: Zap,
-        title: "Developer Experience",
-        description:
-            "Consistent APIs, shared design language, and thorough documentation make building on Veblex fast and intuitive.",
-    },
-    {
-        icon: Globe,
-        title: "Built for Scale",
-        description:
-            "From solo projects to enterprise deployments, the Veblex ecosystem grows with you — no re-architecture needed.",
-    },
-];
+import Hero from "@partials/about/hero.astro";
+import Mission from "@partials/about/mission.astro";
+import Principles from "@partials/about/principles.astro";
+import Roadmap from "@partials/about/roadmap.astro";
 
-const timeline = [
-    {
-        phase: "Phase 1",
-        title: "Foundation",
-        description: "Veblex Auth, Gym, and Calendar launch as the core trio.",
-    },
-    {
-        phase: "Phase 2",
-        title: "Expansion",
-        description:
-            "New services join the ecosystem with deeper cross-service integrations.",
-    },
-    {
-        phase: "Phase 3",
-        title: "Platform",
-        description:
-            "Open APIs and a developer marketplace to extend every Veblex service.",
-    },
-];
+import CTA from "@partials/basic-cta.astro";
 ---
 
 <Layout>
     <main class="flex-1">
-        <section
-            class="mx-auto container grid items-center max-w-3xl text-center py-24 min-h-[60vh]"
-        >
-            <div>
-                <span
-                    class="flex gap-2 items-center mx-auto w-fit bg-secondary py-2 px-6 rounded-full text-muted-foreground uppercase text-xs"
-                >
-                    <Layers class="size-4" />
-                    About Veblex
-                </span>
-                <h1
-                    class="text-4xl md:text-6xl font-bold leading-tight mt-8 mb-6"
-                >
-                    An <span class="text-gradient">ecosystem</span>,<br />
-                    not just a product
-                </h1>
-                <p class="text-lg text-muted-foreground">
-                    Veblex brings together a growing suite of services — Gym,
-                    Calendar, Auth, and more — under a single identity. Every
-                    product shares the same design language, authentication
-                    layer, and developer experience.
-                </p>
-            </div>
-        </section>
+        <Hero />
+        <Mission />
+        <Principles />
+        <Roadmap />
+
+        <CTA />
     </main>
 </Layout>

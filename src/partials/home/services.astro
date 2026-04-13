@@ -1,4 +1,6 @@
 ---
+import { ChevronRight } from "@lucide/astro";
+
 export const partial = true;
 
 const services = [
@@ -39,8 +41,10 @@ const services = [
 
 <section id="services">
     <div class="mx-auto container px-4 py-24 sm:py-32 sm:px-6 lg:px-8">
-        <span class="text-muted-foreground font-mono uppercase">Services</span>
-        <h2 class="my-4 text-4xl font-bold tracking-tight sm:text-4xl">
+        <span class="text-muted-foreground font-mono uppercase text-sm"
+            >Services</span
+        >
+        <h2 class="my-4 text-3xl font-bold tracking-tight sm:text-4xl">
             Built to work together
         </h2>
         <p class="text-lg leading-relaxed text-muted-foreground">
@@ -70,6 +74,16 @@ const services = [
                     </a>
                 ))
             }
+        </div>
+
+        <div class="flex justify-center mt-12">
+            <a
+                class="cursor-pointer flex items-center justify-between gap-2 rounded-lg py-4 px-6 sm:px-12 font-medium sm:text-lg hover:bg-card/90 bg-card text-primary-foreground transition-all duration-300 hover:border-primary/50 hover:scale-[1.02]"
+                href="/services"
+            >
+                Explore all services
+                <ChevronRight class="size-5" />
+            </a>
         </div>
     </div>
 </section>

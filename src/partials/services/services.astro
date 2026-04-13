@@ -1,0 +1,154 @@
+---
+import {
+    Calendar,
+    Dumbbell,
+    Mail,
+    Shield,
+    ChartColumn,
+    Clapperboard,
+} from "@lucide/astro";
+import { cn } from "@/lib/utils";
+
+export const partial = true;
+
+const services = [
+    {
+        icon: Dumbbell,
+        tag: "Fitness",
+        title: "Veblex Gym",
+        description:
+            "Track workouts, set goals, and analyze performance with a complete fitness management platform.",
+        features: [
+            "Workout tracking",
+            "Goal setting",
+            "Performance analytics",
+            "Progress reports",
+        ],
+        href: "https://gym.veblex.com/",
+    },
+    {
+        icon: Calendar,
+        tag: "Productivity",
+        title: "Veblex Calendar",
+        description:
+            "Smart scheduling with cross-service sync. Plan across your entire Veblex ecosystem effortlessly.",
+        features: [
+            "Cross-service sync",
+            "Smart scheduling",
+            "Team calendars",
+            "Reminders",
+        ],
+        href: "https://calendar.veblex.com/",
+    },
+    {
+        icon: Shield,
+        tag: "Security",
+        title: "Veblex Auth",
+        description:
+            "Single sign-on service providing secure, unified authentication across all Veblex products.",
+        features: ["SSO", "OAuth 2.0", "Role-based access", "Two-factor auth"],
+        href: "https://auth.veblex.com/",
+    },
+    {
+        icon: Clapperboard,
+        tag: "Productivity",
+        title: "Moviestix",
+        description:
+            "Track what you're watching, manage your watchlist, see detailed progress on shows.",
+        features: ["Watchlist", "Tracking", "Recommendation", "Movies/shows"],
+        href: "https://www.moviestix.com/",
+    },
+    {
+        icon: Mail,
+        tag: "Communication",
+        title: "Veblex Mail",
+        description:
+            "Integrated messaging and notifications across the ecosystem. Stay connected without leaving Veblex.",
+        features: [
+            "Unified inbox",
+            "Cross-service alerts",
+            "Team channels",
+            "Smart filters",
+        ],
+        comingSoon: true,
+    },
+    {
+        icon: ChartColumn,
+        tag: "Analytics",
+        title: "Veblex Insights",
+        description:
+            "Dashboards and reports that pull data from every Veblex service into one actionable view.",
+        features: [
+            "Cross-service data",
+            "Custom dashboards",
+            "Export reports",
+            "Real-time metrics",
+        ],
+        comingSoon: true,
+    },
+];
+---
+
+<section class="border-t border-border">
+    <div class="mx-auto container py-24 px-4 sm:px-6 lg:px-8">
+        <div>
+            <span class="text-muted-foreground font-mono uppercase text-sm">
+                Available & Upcoming
+            </span>
+            <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+                The full lineup
+            </h2>
+        </div>
+        <div
+            class="grid gap-6 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 mt-12"
+        >
+            {
+                services.map((service) => {
+                    const Icon = service.icon;
+                    const Wrapper = service.href ? "a" : "div";
+
+                    return (
+                        <Wrapper
+                            href={service.href}
+                            target={service.href ? "_blank" : undefined}
+                            rel={
+                                service.href ? "noopener noreferrer" : undefined
+                            }
+                            class={cn(
+                                "group relative rounded-lg border border-primary/30 bg-card p-6 space-y-2 transition-all duration-300 hover:border-primary/50",
+                                service.href ? "hover:scale-[1.02]" : "",
+                            )}
+                        >
+                            {service.comingSoon && (
+                                <span class="absolute right-4 top-4 rounded-full bg-secondary px-3 py-1.5 font-heading text-[10px] uppercase tracking-widest leading-snug text-muted-foreground grid items-center justify-center">
+                                    Coming Soon
+                                </span>
+                            )}
+
+                            <div class="hidden md:flex mb-4 size-12 items-center justify-center rounded-lg bg-secondary">
+                                <Icon class="size-6 text-foreground" />
+                            </div>
+
+                            <span class="flex text-muted-foreground font-mono uppercase text-xs">
+                                {service.tag}
+                            </span>
+                            <h3 class="text-lg">{service.title}</h3>
+                            <p class="text-sm leading-relaxed text-muted-foreground">
+                                {service.description}
+                            </p>
+
+                            <ul class="space-y-1 mt-4">
+                                {service.features.map((f) => (
+                                    <li class="flex items-center gap-2 text-xs text-muted-foreground">
+                                        <span class="h-1 w-1 rounded-full bg-foreground" />
+                                        {f}
+                                    </li>
+                                ))}
+                            </ul>
+                        </Wrapper>
+                    );
+                })
+            }
+        </div>
+    </div>
+</section>
