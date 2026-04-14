@@ -1,0 +1,21 @@
+---
+import Layout from "@layouts/root.astro";
+
+import Hero from "@partials/about/hero.astro";
+import Mission from "@partials/about/mission.astro";
+import Principles from "@partials/about/principles.astro";
+import Roadmap from "@partials/about/roadmap.astro";
+
+import CTA from "@partials/basic-cta.astro";
+---
+
+<Layout>
+    <main class="flex-1">
+        <Hero />
+        <Mission />
+        <Principles />
+        <Roadmap />
+
+        <CTA />
+    </main>
+</Layout>
