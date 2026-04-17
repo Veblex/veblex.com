@@ -82,10 +82,6 @@ const services = [
                     return (
                         <Wrapper
                             href={service.href}
-                            target={service.href ? "_blank" : undefined}
-                            rel={
-                                service.href ? "noopener noreferrer" : undefined
-                            }
                             class={cn(
                                 "group relative rounded-lg border border-primary/30 bg-card p-6 space-y-2 transition-all duration-300 hover:border-primary/50",
                                 service.href ? "hover:scale-[1.02]" : "",
