@@ -30,17 +30,14 @@ const footerLinks: {
             {
                 name: "Veblex Auth",
                 href: "https://auth.veblex.com/",
-                target: "_blank",
             },
             {
                 name: "Veblex Gym",
                 href: "https://gym.veblex.com/",
-                target: "_blank",
             },
             {
                 name: "Moviestix",
                 href: "https://moviestix.com/",
-                target: "_blank",
             },
         ],
     },
@@ -86,7 +83,7 @@ const footerLinks: {
                 <a href="/" class="flex max-w-28">
                     <img
                         src="/images/brand/logo/icons/svg/veblex-logo_full-light.svg"
-                        alt="Veblex"
+                        alt="Veblex brand logo"
                     />
                 </a>
 
@@ -129,7 +126,6 @@ const footerLinks: {
                                             href={link.href}
                                             class="text-sm text-muted-foreground transition-colors hover:text-foreground"
                                             target={link.target ?? "_self"}
-                                            rel="noopener noreferrer"
                                         >
                                             {link.name}
                                         </a>
@@ -154,7 +150,6 @@ const footerLinks: {
                 <a
                     href={`mailto:${contactMail}`}
                     target="_blank"
-                    rel="noopener noreferrer"
                     class="transition-colors hover:text-foreground"
                 >
                     {contactMail}
